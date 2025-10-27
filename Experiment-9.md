@@ -1,6 +1,3 @@
-# Windows Resource Monitor: Malicious Activity Detection Experiment
-
----
 
 ## 🎯 Aim
 
