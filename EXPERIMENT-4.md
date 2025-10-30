@@ -50,6 +50,19 @@ b. Once enabled, open an email in Outlook or OWA and click the MHA icon to view 
 
 <img width="1920" height="1080" alt="Screenshot (120)" src="https://github.com/user-attachments/assets/ba84041f-915a-4353-bda1-169f9cb66c19" />
 
+---
+
+# Rubrics
+
+| Criteria | Mark Allotted | Mark Awarded |
+|---|---:|---:|
+| 1. GitHub Activity & Submission Regularity | 3 | |
+| 2. Application of Forensic Tools & Practical Execution | 3 | |
+| 3. Documentation & Reporting | 2 | |
+| 4. Engagement, Problem-Solving & Team Collaboration | 2 | |
+| *Total* | *10* | |
+
+---
 
 # Result:
 • The raw email headers are transformed into a structured, user-friendly format.
