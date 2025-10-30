@@ -1,108 +1,118 @@
-
-## 🎯 Aim
-
-To monitor, analyze, and identify suspicious or malicious system behavior on a Windows environment using **Windows Resource Monitor**.
+## **Aim**
+To use Microsoft Sysinternals **Process Explorer** to monitor system activities and identify any **suspicious or malicious processes** running on a Windows computer.
 
 ---
 
-## 🧰 Tools & Requirements
-
-| Tool / Resource            | Purpose                                                |
-|----------------------------|--------------------------------------------------------|
-| **Windows Resource Monitor** | Track resource usage and process behavior              |
-| **Windows OS**             | Platform; available in Windows 7 and later             |
-| **Administrator Privileges** | Required for system resource visibility                |
-| **Internet Connection**    | Research unknown/suspicious processes                  |
+## **Requirements**
+- Windows operating system  
+- Internet connection  
+- **Process Explorer** (from Microsoft Sysinternals)  
+- Optional: Antivirus software (e.g., Windows Defender, Malwarebytes)
 
 ---
 
-## ⚙️ Procedure
-
-### Step 1: Launch the Tool
-
-1. Open **Task Manager** (`Ctrl + Shift + Esc`).
-2. Go to **Performance** tab.
-3. Click **Open Resource Monitor**.
-4. Or, run `resmon.exe` from the Run dialog (`Win + R`).
-
-
-
-<img width="1223" height="753" alt="506177099-578a5fee-a6d7-4ca3-bf51-757d7f86d1b3" src="https://github.com/user-attachments/assets/fe64863a-cc4a-4de6-946a-99e696951d47" />
-
+## **Description**
+Process Explorer is a part of the **Microsoft Sysinternals Suite**. It is a powerful tool used to view detailed information about system processes.  
+It helps investigators and administrators analyze active processes, detect suspicious behavior, monitor CPU and memory usage, and verify process authenticity using digital signatures.
 
 ---
 
-### Step 2: Explore the Interface
+## **Step-by-Step Procedure**
 
-- **Overview**: Summarized performance data.
-- **CPU**: Process usage and threads.
-- **Memory**: Physical memory allocation.
-- **Disk**: File and I/O activity.
-- **Network**: Communication endpoints and bandwidth usage.
-
-
-
-<img width="1271" height="770" alt="506178434-de02cbd3-e460-4a03-a20c-291bc4a38e4d" src="https://github.com/user-attachments/assets/8ae685a3-01d6-4a7e-a6e3-f49d1160e325" />
-
-
+### **Step 1: Download and Setup Process Explorer**
+1. Go to the official Microsoft Sysinternals website:  
+   🔗 [https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)
+2. Click **Download Process Explorer**.
+3. Extract the downloaded ZIP file to a folder.
+4. Right-click `procexp64.exe` (for 64-bit) or `procexp.exe` (for 32-bit) → select **Run as Administrator**.
 
 ---
 
-### Step 3: Identify Suspicious Activity
-
-1. **Unusual CPU usage** – processes using high CPU consistently.
-2. **Memory leaks** – processes continuously eating up memory.
-3. **Disk usage spikes** – unknown processes with heavy read/write activity.
-4. **Network anomalies** – persistent outbound connections from unfamiliar processes.
-5. **File location check** – right-click a process → *Open File Location* to verify directory (e.g., `C:\Windows\System32`).
-
----
-
-### Step 4: Cross-Verify Process Reputation
-
-- Search unknown process names online.
-- Use [VirusTotal](https://www.virustotal.com/) or [Hybrid Analysis](https://www.hybrid-analysis.com/).
-
-
-
-<img width="1191" height="762" alt="506178705-923e8d6f-8982-477d-8767-2593b91e79e5" src="https://github.com/user-attachments/assets/06ad6de7-7c20-4ac5-88bc-57d156d3a900" />
-
-
+### **Step 2: Understand the Interface**
+1. The main window displays all running processes in a **hierarchical tree view**.
+2. Each process shows details such as **PID**, **CPU usage**, **memory usage**, and **company name**.
+3. Color codes represent process states:
+   - 🟩 **Green** — Newly started processes  
+   - 🟥 **Red** — Terminated processes  
+   - 🟦 **Light Blue** — Processes running under the current user  
+   - 🟪 **Pink** — Suspended processes
+![9 1](https://github.com/user-attachments/assets/8c314555-99fb-41df-a7fa-31684fb03d52)
 
 ---
 
-### Step 5: Mitigate Threats
-
-1. **End Task** – right-click → End Process.
-2. **Disable Auto-start Entries** – via *System Configuration (msconfig)* or *Startup Apps.*
-3. **Virus Scan** – with Windows Defender or trusted anti-malware.
-
-
-
-<img width="1246" height="732" alt="506179348-509129b0-a70d-4f35-98e9-8ddc9e978db9" src="https://github.com/user-attachments/assets/c77c7d87-3683-4952-af5e-4a46c482204b" />
-
-
-
----
-
-## 🔍 Observations
-
-| Process Name        | Suspicious Behavior        | Action Taken          |
-|---------------------|---------------------------|----------------------|
-| tempwatcher.exe     | High disk writes, unknown | Terminated           |
-| svchost.exe         | Stable, verified safe     | Monitored            |
-| browserassist.exe   | Persistent outbound traffic | Scanned & Quarantined |
+### **Step 3: Identify Suspicious Processes**
+1. Look for **unfamiliar or oddly named processes** (e.g., `xkdjeo.exe`, `randomname123.exe`).
+2. Check the **Company Name** and **Description**:
+   - Legitimate software usually shows known publishers like *Microsoft*, *Intel*, or *Adobe*.
+3. Right-click the process → **Properties** → go to the **Image** tab.
+4. Verify the **Path** of the executable file:
+   - ✅ Safe: `C:\Windows\System32\`
+   - ⚠️ Suspicious: `C:\Users\<User>\AppData\Temp\` or `Downloads\`
+5. Check for **Digital Signature**:
+   - Valid signature = trusted developer  
+   - No signature or invalid = possibly malicious
+![9 10](https://github.com/user-attachments/assets/4f1a4ed2-4a3a-43b0-99bf-1869f4977eed)
 
 ---
 
-## 📈 Result
-
-Windows Resource Monitor efficiently detected unusual activities, guiding identification and mitigation of potentially harmful processes.
+### **Step 4: Analyze Process Behavior**
+1. Observe **CPU**, **Memory**, and **I/O usage** columns.
+2. If a small or unknown process consumes **excessive CPU or memory**, it may be malicious.
+3. Right-click the process → **Properties** → go to the **TCP/IP tab**.
+   - Check if it communicates with **unknown external IP addresses**.
+4. Examine **Handles** and **DLLs** tabs for suspicious loaded files or libraries.
+![9 4](https://github.com/user-attachments/assets/917486d8-cac0-4aca-b7c9-0d564e42cefa)
 
 ---
 
-## 📚 Conclusion
+### **Step 5: Verify Process Legitimacy**
+1. Search the process name on Google.  
+   Example: `svchost.exe` vs `svhost.exe` (one letter missing — suspicious).
+2. Visit 🔗 [https://www.virustotal.com](https://www.virustotal.com)
+   - Upload the process file or search its name to verify if it’s reported as malware.
+3. Cross-check with **ProcessLibrary.com** or official vendor websites for authenticity.
+![9 6](https://github.com/user-attachments/assets/510b1b85-2bea-43d5-bc15-e861cc676de0)
 
-Windows Resource Monitor is a reliable native tool for diagnosing system anomalies. Coupled with process verification and antivirus actions, it strengthens system defense and integrity.
+---
+
+### **Step 6: Take Appropriate Action**
+1. **If the process is confirmed malicious:**
+   - Right-click the process → **Kill Process** to stop it.
+   - Delete the corresponding executable file from its path.
+2. **If unsure:**
+   - Right-click → **Suspend Process** to stop it temporarily for investigation.
+3. **After removal:**
+   - Run a **Full System Scan** using Windows Defender or Malwarebytes to ensure no remnants remain.
+![9 8](https://github.com/user-attachments/assets/c13dbe52-1c1d-40f9-8f42-59859f9c2a52)
+
+---
+
+### **Step 7: Example Observation**
+You find `faangpath_simple_template.pdf` consuming 70% CPU.  
+- **Path:** `C:\Users\Admin\AppData\Temp\faangpath_simple_template.pdf`  
+- **Digital Signature:** None  
+- **Company Name:** Unknown  
+- **Network Activity:** Shows connections to unknown IPs in the TCP/IP tab  
+- **Online Check:** VirusTotal confirms it as a **known trojan**  
+- **Action Taken:** Suspended → Killed → Deleted file → Performed full antivirus scan  
+![9 9](https://github.com/user-attachments/assets/e4a905cc-52c6-4036-987d-a4f35dd1277a)
+
+---
+
+## Rubrics
+
+| Criteria & Marks Assigned | <div align="center">Mark Allotted</div> | <div align="center">Mark Awarded</div> |
+|:--|:--:|:--:|
+| GitHub Activity & Submission Regularity | **3** |  |
+| Application of Forensic Tools & Practical Execution | **3** |  |
+| Documentation & Reporting | **2** |  |
+| Engagement, Problem-Solving & Team Collaboration | **2** |  |
+| **Total** | **10** |  |
+
+---
+
+## **Result**
+Using Process Explorer, suspicious processes were successfully identified by examining their **CPU usage**, **path**, **digital signature**, and **network activity**.  
+Confirmed malicious processes were terminated and removed to maintain system integrity.
 
 ---
