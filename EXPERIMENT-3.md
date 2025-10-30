@@ -52,6 +52,20 @@ To capture, analyze, and troubleshoot network traffic using Wireshark for networ
 
 <img width="1920" height="1080" alt="Screenshot (124)" src="https://github.com/user-attachments/assets/383f9aa6-cc23-4143-b4fd-6c41320d85ec" />
 
+---
+
+# Rubrics
+
+| Criteria | Mark Allotted | Mark Awarded |
+|---|---:|---:|
+| 1. GitHub Activity & Submission Regularity | 3 | |
+| 2. Application of Forensic Tools & Practical Execution | 3 | |
+| 3. Documentation & Reporting | 2 | |
+| 4. Engagement, Problem-Solving & Team Collaboration | 2 | |
+| *Total* | *10* | |
+
+---
+
 # Result:
 
 Network packets were successfully captured and analyzed using Wireshark. The tool provided detailed insights into protocols, IP addresses, and communication flows, which can be used for troubleshooting and forensic investigation.
