@@ -65,6 +65,18 @@ o Preview or mount image for analysis
 
 ---
 
+# Rubrics
+
+| Criteria | Mark Allotted | Mark Awarded |
+|---|---:|---:|
+| 1. GitHub Activity & Submission Regularity | 3 | |
+| 2. Application of Forensic Tools & Practical Execution | 3 | |
+| 3. Documentation & Reporting | 2 | |
+| 4. Engagement, Problem-Solving & Team Collaboration | 2 | |
+| *Total* | *10* | |
+
+---
+
 # RESULT:
 
 The forensic image of the given storage media was successfully created using FTK Imager. The generated image was verified with hash values, confirming that the integrity of the original evidence was preserved.
