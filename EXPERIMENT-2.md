@@ -59,6 +59,19 @@ o Exit and verify recovery.
 
 <img width="1146" height="660" alt="image" src="https://github.com/user-attachments/assets/a9973e5e-628e-445f-b07a-9aeefda81fdc" />
 
+---
+
+# Rubrics
+
+| Criteria | Mark Allotted | Mark Awarded |
+|---|---:|---:|
+| 1. GitHub Activity & Submission Regularity | 3 | |
+| 2. Application of Forensic Tools & Practical Execution | 3 | |
+| 3. Documentation & Reporting | 2 | |
+| 4. Engagement, Problem-Solving & Team Collaboration | 2 | |
+| *Total* | *10* | |
+
+---
 
 # Result:
 
