@@ -82,6 +82,18 @@ To examine a disk image or folder with Autopsy, extract digital artifacts, and g
 
 ---
 
+# Rubrics
+
+| Criteria | Mark Allotted | Mark Awarded |
+|---|---:|---:|
+| 1. GitHub Activity & Submission Regularity | 3 | |
+| 2. Application of Forensic Tools & Practical Execution | 3 | |
+| 3. Documentation & Reporting | 2 | |
+| 4. Engagement, Problem-Solving & Team Collaboration | 2 | |
+| *Total* | *10* | |
+
+---
+
 ## Result
 
 Autopsy successfully parsed the evidence, recovered key artifacts (files, metadata, web/browser activity, keyword hits), and produced a structured forensic report.
